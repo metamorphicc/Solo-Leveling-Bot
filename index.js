@@ -15,8 +15,7 @@ const row = keyboardList.map((char) => {
 const keyboardStart = Keyboard.from(row).resized().placeholder('Какую кнопку?').oneTime()
 
 TEXT=`Ежедневные задания:
---- Помыть письку
---- Помыть попу
+
 
 Выполнено: ${0}`
 
@@ -70,11 +69,11 @@ bot.callbackQuery('button-1', async (ctx) => {
 
 bot.callbackQuery('button-2', async (ctx) => {
     await ctx.answerCallbackQuery()
-    await ctx.reply('Секретная кнопка. Ты идешь нахуй!')
+    await ctx.reply('Секретная кнопка.')
 })
 
 bot.hears('Кнопка 1', async (ctx) => {
-    await ctx.reply('Кнопка 1. Заебись👍')
+    await ctx.reply('Кнопка 1.')
 })
 
 bot.command('dailytasks', async (ctx) => {
@@ -86,12 +85,12 @@ bot.hears([/задания/, /Задания/], async (ctx) => {
 })
 
 bot.command('pythonshit', async (ctx) => {
-    await ctx.reply('Python - говнО! Я полностью с тобой согласен!')
+    await ctx.reply('')
 })
 
 bot.command('start', async (ctx) => {
 
-    await ctx.reply('Привет! Ты нажал команду /start. Ну ты и долбаеб', {
+    await ctx.reply('Привет! Ты нажал команду /start.', {
         reply_markup: keyboardStart
     });
 })
